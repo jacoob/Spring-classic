@@ -1,0 +1,2 @@
+علاوه بر اینجکت از طریق تابع سازنده و setter , getter می توان از طریق factoryMethod هم اینجکت کرد.
+در این صورت Factorymethod  می تونه هم static باشه و همnonstatic.
