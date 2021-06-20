@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+
+    <bean id="b" class="dependencyInjection.typeofautowire.B">
+        <property name="name" value="mahdi"/>
+        <property name="id" value="1"/>
+    </bean>
+
+    <!--    <bean id="b1" class="B">-->
+    <!--        <property name="name" value="mahdi"/>-->
+    <!--        <property name="id" value="1"/>-->
+    <!--    </bean>-->
+    <!--    be could not autowired by name,because filed b is autowired by name b1 in class A (and autowired by name) b1 != b-->
+    <bean id="a1" class="dependencyInjection.typeofautowire.A" autowire="byName">
+    </bean>
+
+    <bean id="a2" class="dependencyInjection.typeofautowire.A" autowire="byType">
+    </bean>
+
+    <bean id="a3" class="dependencyInjection.typeofautowire.A" autowire="constructor">
+    </bean>
+
+    <bean id="a4" class="dependencyInjection.typeofautowire.A" autowire="no">
+        <property name="b" ref="b"/>
+     </bean>
+</beans>
