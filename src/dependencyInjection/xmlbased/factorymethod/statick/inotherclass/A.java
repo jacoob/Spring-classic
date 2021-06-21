@@ -1,4 +1,5 @@
-package dependencyInjection.factorymethod.nonstatic;
+package dependencyInjection.xmlbased.factorymethod.statick.inotherclass;
+
 
 public class A implements Printable {
 

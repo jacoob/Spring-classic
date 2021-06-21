@@ -1,4 +1,4 @@
-package dependencyInjection.typeofautowire;
+package dependencyInjection.xmlbased.typeofautowire;
 
 public class B {
     public int id;

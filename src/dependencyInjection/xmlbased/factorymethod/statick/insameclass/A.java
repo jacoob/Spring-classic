@@ -1,4 +1,4 @@
-package dependencyInjection.factorymethod.statick.insameclass;
+package dependencyInjection.xmlbased.factorymethod.statick.insameclass;
 
 public class A implements Printable {
 

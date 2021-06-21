@@ -1,4 +1,4 @@
-package dependencyInjection.bymultipleconstructor;
+package dependencyInjection.xmlbased.bymultipleconstructor;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

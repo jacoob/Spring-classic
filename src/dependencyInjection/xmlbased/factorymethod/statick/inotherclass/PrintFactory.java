@@ -1,4 +1,4 @@
-package dependencyInjection.factorymethod.statick.inotherclass;
+package dependencyInjection.xmlbased.factorymethod.statick.inotherclass;
 
 public class PrintFactory {
     private static Printable printable =new A();

@@ -1,4 +1,4 @@
-package dependencyInjection.bymultipleconstructor;
+package dependencyInjection.xmlbased.bymultipleconstructor;
 
 public class Address {
     String address;

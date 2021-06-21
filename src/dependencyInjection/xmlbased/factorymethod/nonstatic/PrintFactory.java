@@ -1,4 +1,4 @@
-package dependencyInjection.factorymethod.nonstatic;
+package dependencyInjection.xmlbased.factorymethod.nonstatic;
 
 public class PrintFactory {
 

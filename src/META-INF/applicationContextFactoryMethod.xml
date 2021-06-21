@@ -8,15 +8,15 @@
 
 
     <!--    Dependency Injection with static Factory  Method in same class in Spring-->
-    <bean id="a" class="dependencyInjection.factorymethod.statick.insameclass.A" factory-method="getA"/>
+    <bean id="a" class="dependencyInjection.xmlbased.factorymethod.statick.insameclass.A" factory-method="getA"/>
 
     <!--    Dependency Injection with static Factory Method in other class in Spring-->
-    <bean id="printablebeanA" class="dependencyInjection.factorymethod.statick.inotherclass.PrintFactory" factory-method="getPrintableA"/>
-    <bean id="printablebeanB" class="dependencyInjection.factorymethod.statick.inotherclass.PrintFactory" factory-method="getPrintableB"/>
+    <bean id="printablebeanA" class="dependencyInjection.xmlbased.factorymethod.statick.inotherclass.PrintFactory" factory-method="getPrintableA"/>
+    <bean id="printablebeanB" class="dependencyInjection.xmlbased.factorymethod.statick.inotherclass.PrintFactory" factory-method="getPrintableB"/>
 
     <!--    Dependency Injection with non static Factory Method in same class in Spring-->
-    <bean id="pf" class="dependencyInjection.factorymethod.nonstatic.PrintFactory" />
-    <bean id="pfa" class="dependencyInjection.factorymethod.nonstatic.PrintFactory" factory-bean="pf" factory-method="getPrintableA"/>
+    <bean id="pf" class="dependencyInjection.xmlbased.factorymethod.nonstatic.PrintFactory" />
+    <bean id="pfa" class="dependencyInjection.xmlbased.factorymethod.nonstatic.PrintFactory" factory-bean="pf" factory-method="getPrintableA"/>
 
 
 </beans>

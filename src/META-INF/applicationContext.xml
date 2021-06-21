@@ -7,7 +7,7 @@
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 
-    <bean id="b" class="dependencyInjection.typeofautowire.B">
+    <bean id="b" class="dependencyInjection.xmlbased.typeofautowire.B">
         <property name="name" value="mahdi"/>
         <property name="id" value="1"/>
     </bean>
@@ -17,35 +17,35 @@
     <!--        <property name="id" value="1"/>-->
     <!--    </bean>-->
     <!--    be could not autowired by name,because filed b is autowired by name b1 in class A (and autowired by name) b1 != b-->
-    <bean id="a1" class="dependencyInjection.typeofautowire.A" autowire="byName">
+    <bean id="a1" class="dependencyInjection.xmlbased.typeofautowire.A" autowire="byName">
     </bean>
 
-    <bean id="a2" class="dependencyInjection.typeofautowire.A" autowire="byType">
+    <bean id="a2" class="dependencyInjection.xmlbased.typeofautowire.A" autowire="byType">
     </bean>
 
-    <bean id="a3" class="dependencyInjection.typeofautowire.A" autowire="constructor">
+    <bean id="a3" class="dependencyInjection.xmlbased.typeofautowire.A" autowire="constructor">
     </bean>
 
-    <bean id="a4" class="dependencyInjection.typeofautowire.A" autowire="no">
+    <bean id="a4" class="dependencyInjection.xmlbased.typeofautowire.A" autowire="no">
         <property name="b" ref="b"/>
      </bean>
 
 
 
-    <bean id="studentbean" class="dependencyInjection.bymultipleconstructor.Student">
+    <bean id="studentbean" class="dependencyInjection.xmlbased.bymultipleconstructor.Student">
         <property name="name" value="Mahdi Yaghoobi"></property>
         <constructor-arg name="id" value="1" type="int"></constructor-arg>
     </bean>
 
-    <bean id="studentbean2" class="dependencyInjection.bymultipleconstructor.Student">
+    <bean id="studentbean2" class="dependencyInjection.xmlbased.bymultipleconstructor.Student">
         <constructor-arg name="name" value="mmmm"/>
     </bean>
 
-    <bean id="address1" class="dependencyInjection.bymultipleconstructor.Address">
+    <bean id="address1" class="dependencyInjection.xmlbased.bymultipleconstructor.Address">
         <property name="address" value="tehran"/>
     </bean>
 
-    <bean id="studentbean3" class="dependencyInjection.bymultipleconstructor.Student">
+    <bean id="studentbean3" class="dependencyInjection.xmlbased.bymultipleconstructor.Student">
         <constructor-arg ref="address1"/>
     </bean>
 </beans>

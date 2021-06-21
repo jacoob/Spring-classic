@@ -1,4 +1,4 @@
-package dependencyInjection.typeofautowire;
+package dependencyInjection.xmlbased.typeofautowire;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
