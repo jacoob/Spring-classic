@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.sqlite.JDBC" />
+        <property name="url" value="jdbc:sqlite:employee.db" />
+        <!--        <property name="url" value="jdbc:sqlite:E:/sqlite/db/employee.db" />-->
+        <!--        <property name="url" value="jdbc:sqlite::memory:" />-->
+        <!--        <property name="username" value="mahdi" />-->
+        <!--        <property name="password" value="mahdi" />-->
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="ds"></property>
+    </bean>
+
+    <bean id="edao" class="jdbc.jdbctemplate.statement.EmployeeDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+    </bean>
+
+
+
+
+    <bean id="edaoPS" class="jdbc.jdbctemplate.preparedstatement.EmployeeDaoPreparedStatement">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+
+    <!--    <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+    <!--        <property name="driverClassName" value="org.h2.Driver" />-->
+    <!--&lt;!&ndash;        <property name="url" value="jdbc:h2:mem:" />&ndash;&gt;-->
+    <!--&lt;!&ndash;        <property name="url" value="jdbc:h2:mem:default" />&ndash;&gt;-->
+    <!--        <property name="url" value="jdbc:h2:file:E:/data/sample" />-->
+    <!--        <property name="username" value="mahdi" />-->
+    <!--        <property name="password" value="mahdi" />-->
+    <!--    </bean>-->
+</beans>
