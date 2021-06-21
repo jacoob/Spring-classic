@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="obj" class="aop.xmlbased.A"></bean>
+
+    <bean id="ba" class="aop.xmlbased.BeforeAdvisor"></bean>
+    <bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="obj"></property>
+        <property name="interceptorNames">
+            <list>
+                <value>ba</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="afterAdviserBean" class="aop.xmlbased.AfterAdviser"/>
+    <bean id="proxyAfterReturning" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="obj"/>
+        <property name="interceptorNames">
+            <list>
+                <value>afterAdviserBean</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="aroundInvokeBean" class="aop.xmlbased.AroundInvoke"/>
+    <bean id="proxyMethodInvocation" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="obj"/>
+        <property name="interceptorNames">
+            <list>
+                <value>aroundInvokeBean</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="validatorBean" class="aop.xmlbased.Validator"/>
+    <bean id="throwsAdvisorBean" class="aop.xmlbased.ThrowsAdvisor"/>
+    <bean id="throwsAdvisorProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="validatorBean"/>
+        <property name="interceptorNames">
+            <list>
+                <value>throwsAdvisorBean</value>
+            </list>
+        </property>
+    </bean>
+
+</beans>
